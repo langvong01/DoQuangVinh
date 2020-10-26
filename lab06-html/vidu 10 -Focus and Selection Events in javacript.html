@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> Reservation </title>
+    <script>
+        function showStyle(field)
+        {
+            field.style.backgroundColor = ‘#FFFFCC’;
+        }
+        function hideStyle(field)
+        {
+            field.style.backgroundColor = ‘#FFFFFF’;
+        }
+        function setFontStyle(field)
+        {
+            field.style.fontWeight = ‘bold’;
+            field.style.fontFamily = ‘Arial’;
+        }
+    </script>
+</head>
+<body>
+<h2> Feedback Form</h2>
+<form id=”frmreservation”>
+    <table>
+        <tr>
+            <td> <label for=”txtName”>Name:</label></td>
+            <td> <input id=”txtName” type=”text” onfocus=”showStyle(this
+                        );” onblur=”hideStyle(this);” onselect=setFontStyle(
+                        this); />
+            </td>
+        </tr>
+        <tr>
+            <td> <label for=”txtEmail”>E-mail:</label></td>
+            <td> <input id=”txtEmail” type=”text” onfocus=”showStyle(this);”
+                        onblur=”hideStyle(this);” onselect=setFontStyle(this); />
+            </td>
+        </tr>
+        <tr>
+            <td> <label for=”txtComment”>Comment:</label></td>
+            <td> <textarea id=”txtComment” cols=”15” rows=”3”
+                           onfocus=”showStyle(this);” onblur=”hideStyle(this);”
+                           onselect=setFontStyle(this);> </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td> <input id=”btnSubmit” type=”button” type=”button”
+                        value=”Submit” /></td>
+            <td> <input id=”btnReset” type=”reset” /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

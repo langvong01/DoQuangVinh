@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> Reservation </title>
+    <script src=”form.js”>
+    </script>
+</head>
+<body>
+<h2> Hotel Reservation Form</h2>
+<form id=”frmreservation”>
+    <table>
+        <tr>
+            <td> <label for=”txtName”>Name:</label></td>
+            <td> <input id=”txtName” type=”text” /></td>
+        </tr>
+        <tr>
+            <td> Arrival Date: </td>
+            <td> <input id=”txtArrival” type=”text” /></td>
+        </tr>
+        <tr>
+            <td> Departure Date: </td>
+            <td> <input id=”txtDeparture” type=”text” /></td>
+        </tr>
+        <tr>
+            <td> Number of Person: </td>
+            <td> <input id=”txtPerson” type=”text” maxlength=”3”
+                        size=”3”></td>
+        </tr>
+        <tr>
+            <td> <img id=”imgSubmit” width=”120px” height=”30px”
+                      src=”submit.jpg” alt=”Submit”,
+                      onmousedown=”showImage(this, ‘submitdown.jpg’);”
+                      onmouseup=”showImage(this,
+                      ‘submit.jpg’);”,onclick=”frmReservation.submit();”/>
+            </td>
+            <td> <img id=”imgSubmit” width=”120px” height=”30px”
+                      src=”reset.jpg” alt=”Reset”,
+                      onmousedown=”showImage(this, ‘resetdown.jpg’);”
+                      onmouseup=”showImage(this,
+                      ‘reset.jpg’);”,onclick=”frmReservation.reset();”/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
