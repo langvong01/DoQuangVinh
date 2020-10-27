@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!DOCTYPE html>
+<head>
+    <title> navigator Object </title>
+    <script>
+        function display_browser()
+        {
+            document.write("Browser name: " +navigator.appName+ "<BR/>");
+            document.write("Browser version: " +navigator.appVersion+ "<BR/>");
+            document.write("Browser language: " +navigator.browserLanguage+ "<BR/>");
+            document.write("Platform: " +navigator.platform+ "<BR/>");
+            if(navigator.cookieEnabled)
+            {
+                document.write("Cookie is enabled in the browser.");
+            }
+        }
+    </script>
+</head>
+<body>
+<input type=”button” value=”Browser Information”
+       onclick="display_browser()"/>
+</body>
+</html>
+<body>
+
+</body>
+</html>

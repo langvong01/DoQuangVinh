@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    //Define a Method Function
+    functioncal_diameter()
+    {
+        var diameter = this.radius * 2;
+        return diameter;
+    }
+    //Define a Constructor Function
+    function circle(radius)
+    {
+        this.radius= radius;
+        this.get_diameter=cal_diameter;
+    }
+    //Create the object
+    circleObj = new circle("10");
+    alert ("Diameter: "+circleObj.get_diameter());
+</script>
+
+<body>
+
+</body>
+</html>

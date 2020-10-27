@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var products = new Array(2);
+    products[0] = new Array("Monitor", "236.75");
+    products[1] = new Array("Keyboard", "45.50");
+    document.write("<TABLE border=1><TR><TH>Name</TH><TH>Price</TH></TR>");
+    for(var i=0; i<products.length; i++)
+    {
+        document.write("<TR>");
+        for(var j=0; j<products[i].length; j++)
+        {
+            document.write("<TD>" + products[i][j] + "</TD>");
+        }
+        document.write("</TR>");
+    }
+    document.write("</TABLE>");
+</script>
+<body>
+
+</body>
+</html>

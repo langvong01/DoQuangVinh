@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+    <title> Form Object </title>
+    <script>
+        function display_length()
+        {
+            var count =document.getElementById("form1").length;
+            alert("Number of controls on the form: " + count);
+        }
+    </script>
+</head>
+<body>
+<form id=”form1” action=”welcome.php”>
+    First name: <input type=”text” name=”firstname” value=”John”
+/><br />
+    Last name: <input type=”text” name=”lastname” value=”Smith”
+/><br />
+    Age : <input type=”text” name=”age” value=”40” /><br />
+    <input type=”button” value=”Controls”onClick=”display_
+           length()”/>
+</form>
+</body>
+</html>

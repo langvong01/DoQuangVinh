@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    var zipcodepattern = /^\d{5}$/;
+    var zipcode = zipcodepattern.exec(prompt("Enter ZIP Code:"));
+    if(zipcode != null)
+    {
+        alert("Valid ZIP Code.");
+        alert("Regular Expression Pattern: " + zipcodepattern.source);
+    }
+    else
+    {
+        alert("Invalid ZIP Code – Format xxxxx.");
+    }
+</script>
+<body>
+
+</body>
+</html>

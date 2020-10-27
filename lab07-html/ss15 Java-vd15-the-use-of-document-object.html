@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <title> Document Object </title>
+    <script>
+        function change_image()
+        {
+            varimgText=document.getElementById("myImg").alt;
+            if(imgText=="ford")
+            {
+                document.getElementById("myImg").src="ferrari.jpg";
+                document.getElementById("myImg").alt ="ferrari";
+                document.getElementById("mytext").value ="Ferrari Car”;
+               }
+        else
+            {
+                document.getElementById("myImg").src="ford.jpg”;
+                document.getElementById("myImg").alt ="ford”;
+                document.getElementById("mytext’).value =”Ford Car”;
+            }
+        }
+    </script>
+</head>
+<body>
+<imgid=”myImg” src=”ford.jpg”width=”300”
+height=”300”alt=”ford” /><br/>
+Model: <input type=”text” id=”mytext”
+              value=”Ford Car” readonly=”readonly”/><br/><br/>
+<input type=”button” value=”Change Image” onclick="change_
+       image()"/>
+</body>
+</html>
