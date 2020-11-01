@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #mCanvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mCanvas");
+            var ctext = canvas.getContext("2d");
+            var x = canvas.width / 2;
+            var radius = 75;
+            var startAngle = 1.1 * Math.PI;
+            var endAngle = 1.9 * Math.PI;
+            var ctrClockwise = false;ctext.beginPath();
+            ctext.arc(x, y, radius, startAngle, endAngle, ctrClockwise);
+            ctext.lineWidth = 25;
+            // line color
+            ctext.strokeStyle = "DarkGreen";
+            ctext.stroke();
+        };
+    </script>
+</head>
+<body>
+<canvas id=”mCanvas” width=”278” height=”250”></canvas>
+</body>
+</html>

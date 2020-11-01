@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #mCanvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mCanvas");
+            var ctext = canvas.getContext("2d");
+            var x = 69;
+            var y = 50;
+            var w = 150;
+            var h = 137;
+            var imgObj = new Image();
+            imgObj.onload = function() {
+                ctext.drawImage(imgObj, x, y, w, h);
+            };
+            imgObj.src = "bird.jpg";
+        };
+    </script>
+</head>
+<body>
+<canvas id="mCanvas" width="278" height="200"></canvas>
+</body>
+</html>

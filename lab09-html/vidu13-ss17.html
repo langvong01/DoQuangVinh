@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #mCanvas {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mCanvas");
+            var ctext = canvas.getContext("2d");
+
+            ctext.fillStyle = "Indigo";
+            ctext.strokeStyle ="black";
+            ctext.lineWidth=2;
+            ctext.font = "italic 30pt Calibri";
+            ctext.fillText("HTML5", 40, 100);
+            ctext.strokeText("HTML5", 40, 100);
+            ctext.fillStyle="blue";
+            ctext.globalAlpha=0.5;
+            ctext.fillRect(100, 10, 150, 100);
+        };
+    </script>
+</head>
+<body>
+<canvas id=”mCanvas” width=”350” height=”170”></canvas>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #mCanvas{
+            border: 1px solid #9C9898;
+        }
+        </style>
+          <script>
+window.onload = function() {
+var canvas = document.getElementById("mCanvas");
+var ctext = canvas.getContext("2d");
+ctext.beginPath();
+ctext.moveTo(178, 150);
+ctext.quadraticCurveTo(220, 0, 320, 150);
+ctext.lineWidth = 15;
+// line color
+ctext.strokeStyle = "Fuchsia";
+ctext.stroke();
+};
+</script>
+</head>
+<body>
+<canvas id="mCanvas" width="378" height="200"></canvas>
+</body>
+</html>

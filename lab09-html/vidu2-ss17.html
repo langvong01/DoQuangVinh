@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> Canvas </title>
+    <script>
+        window.onload = function()
+        var canvas = document.getElementById(‘mCanvas’);
+        var ctext = canvas.getContext(‘2d’);
+        ctext.beginPath();
+        ctext.rect(18, 50, 200, 100);
+        ctext.fillStyle = ”DarkBlue”;
+        ctext.fill();
+        };
+    </script>
+</head>
+<body>
+<canvas id=”mCanvas” width=”578” height=”200”></canvas>
+</body>
+</html>

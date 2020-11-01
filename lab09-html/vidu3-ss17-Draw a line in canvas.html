@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Line</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #mCanvas {
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mCanvas");
+            var ctext = canvas.getContext("2d");
+            ctext.beginPath();
+            ctext.moveTo(100, 150);
+            ctext.lineTo(250, 50);
+            ctext.lineWidth = 5;
+            ctext.strokeStyle = "blue";
+            ctext.stroke();
+        };
+    </script>
+</head>
+<body>
+<canvas id=”mCanvas” width=”360” height=”200”></canvas>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        #mCanvas {
+            border: 1px solid blue;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mCanvas");
+            var ctext = canvas.getContext("2d");
+            var ctrX = canvas.width / 2;
+            var ctrY = canvas.height / 2;
+            var radius = 70;
+            ctext.beginPath();
+            ctext.arc(ctrX, ctrY, radius, 0, 2 * Math.PI, false);
+            ctext.fillStyle = "DarkOrchid";
+            ctext.fill();
+            ctext.lineWidth = 4;
+            ctext.strokeStyle = "black";
+            ctext.stroke();
+        };
+    </script>
+</head>
+<body>
+<canvas id=”mCanvas” width=”356” height=”150”></canvas>
+</body>
+</html>
