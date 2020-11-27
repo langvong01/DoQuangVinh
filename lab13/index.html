@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        header,section,footer,aside,
+        nav,article,figure,figcaption   {
+            display: block;}
+        body{
+            color: #666666;
+            background-color: #f9f8f6;
+            background-position: center;
+            margin: 0px;
+            background-image: url("img/bg-main.jpg");
+        }
+        .main   {
+            width: 980px;
+            margin: 20px auto 20px auto;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+        }
+        header  {
+            height: 160px;
+            background-image: url(img/logo.png);
+            background-repeat: no-repeat;
+
+        }
+        h1  {
+            text-indent: -9999px;
+            width: 940px;
+            height: 130px;
+            margin: 0px;
+        }
+        nav,footer  {
+            clear: both;
+            color: #ffffff;
+            background-color: #1b1e21;
+            height: 30px;
+        }
+        nav ul  {
+            margin: 0px;
+            padding: 5px 0px 5px 30px;
+        }
+        nav li  {
+            display: inline;
+            margin-right: 40px;
+        }
+        nav li a    {
+            color: #ffffff;}
+        section.courses {
+            float: left;
+            width: 659px;
+            border-right: 1px solid #eeeeee;
+        }
+        article {
+            clear: both;
+            overflow: auto;
+            width: 100%;
+        }
+        hgroup  {
+            margin-top: 40px;}
+        figure  {
+            float: left;
+            width: 290px;
+            height: 190px;
+            padding: 5px;
+            margin: 20px;
+            border: 1px solid #eeeeee;
+        }
+        aside   {
+            width: 230px;
+            float: left;
+            padding: 0px 0px 0px 20px;
+        }
+        aside section a{
+            display: block;
+            padding: 10px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        aside section a:hover   {
+            color: #985d6a;
+            background-color: #efefef;}
+        a{
+            color: #de6581;
+            text-decoration: none;
+        }
+        h1,h2,h3    {
+            font-weight: normal;
+        }
+        h2  {
+            margin: 10px 0px 5px 0px;
+            padding: 0px;
+        }
+        h3  {
+            margin: 0px 0px 10px 0px;
+            color: #de6581;
+        }
+        aside h2    {
+            padding: 30px 0px 10px 0px;
+            color: #ffffff;
+            position: relative;
+            top: 20px;
+        }
+        footer  {
+            font-size: 80%;
+            padding: 7px 0px 0px 20px;
+        }
+        h2  button  {
+            background-color: #f81b66;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>
+            <h1>Lien minh 360</h1>
+            <nav>
+                <ul>
+                    <li><a href="" class="current">Cẩm nang</a></li>
+                    <li><a href="">Chiến thuật</a></li>
+                    <li><a href="">Cơ chế hoạt động</a></li>
+                    <li><a href="">Khác</a></li>
+                    <li><a href="">Tướng</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="courses">
+            <article>
+                <figure>
+                    <img src="img/Shen-League-of-Legends-фэндомы-Shihan-He-6050249.jpeg" width="290" height="190" alt="Shen di rung">
+                </figure>
+                <hgroup>
+                    <h2><a href="http://lienminh360.vn/cam-nang/shen-di-rung-phong-cach-duy-cau-giay/"></a>Shen đi rừng phong cách cầu giấy</h2>
+                    <h3>Quả đồng đội tốt thì chí quá</h3>
+                </hgroup>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/lol-item-shop-in-game-league-of-legends-riot-15864877490621353473913.jpg"width="290" height="190" alt="">
+                </figure>
+                <h2><a href="http://lienminh360.vn/cam-nang/nhung-luu-y-se-giup-ban-len-do-mot-cach-hieu-qua-hon/"></a>Những lưu ý giúp bạn lên đồ hiệu quả hơn</h2>
+                <h3>Trang bị cũng là một yếu tố quan trọng giúp bạn có thể giành được chiến thắng</h3>
+            </article>
+            <article>
+                <figure>
+                    <img src="img/Ashe.png"width="290" height="190" alt="">
+                </figure>
+                <h2><a href="http://lienminh360.vn/cam-nang/ashe-va-nhung-dieu-can-biet-de-lam-chu-cung-bang/"></a>Ashe và những điều cần biết để làm chủ cung băng</h2>
+                <h3>Ashe cực kì dễ chơi nhé!</h3>
+            </article>
+        </section>
+        <aside>
+            <section class="popular-recipes">
+                <h2><button style="text-transform: uppercase">Tin game</button> </h2>
+                <hr>
+                <a href="">Phân tích</a>
+                <a href="">Xu hướng</a>
+                <a href="">PBE</a>
+                <a href="">Phát triển</a>
+            </section>
+            <div id="social_ring_fanbox_widget-2" class="right-column SocialRing_Fanbox_Widget"><div class="inner">
+            <div class="caption"><h3></h3></div>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/it_IT/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            </script>
+            <div class="fb-like-box" data-href="https://www.facebook.com/LienMinh360VN/" data-width="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+            </div></div>
+        </aside>
+        <footer>
+            Copyright &copy; 2020 Liên Minh 360. All Rights Reserved
+        </footer>
+    </div>
+</body>
+</html>
