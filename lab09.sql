@@ -1,4 +1,4 @@
-﻿CREATE DATABASE LAB09
+CREATE DATABASE LAB09
 GO
 USE LAB09
 
@@ -170,6 +170,10 @@ INSERT INTO Customer(CustomerName,Addresss,Phone) VALUES('Nguyen Van D','Ha Noi'
 				('S3','C3','Clan',1,'1997-6-5','LonDon','LD','Alan@gmail.com'),
 				('S4','C4','Dlan',0,'1997-5-5','LonDon','LD','Alan@gmail.com'),
 				('S5','C5','Elan',1,'1997-4-5','LonDon','LD','Alan@gmail.com')
+
+		INSERT INTO Student
+		VALUES ('S6','C1','Glan',1,'1997-8-5','LonDon','LD','Alan@gmail.com'),
+				('S7','C5','Hlan',1,'1997-8-5','LonDon','LD','Alan@gmail.com')
 				
 		INSERT INTO Subject
 		VALUES ('M01','Math',1,1,5,5),
@@ -184,7 +188,93 @@ INSERT INTO Customer(CustomerName,Addresss,Phone) VALUES('Nguyen Van D','Ha Noi'
 				('S4','M01',8,7,75),
 				('S5','M01',9,7,80),
 				('S2','CH01',6,6,60)
+		INSERT INTO Mark
+		VALUES ('S6','CH01',5,6,55)
+		
+		INSERT INTO Mark
+		VALUES ('S1','CH01',5,6,55)
 
+		INSERT INTO Mark
+		VALUES ('S7','CH01',6,6,60)
+		
+		SELECT * FROM Mark
+
+--2
 CREATE VIEW V_Student_TwoMark_TwoSubject
+AS 
+SELECT st.RollNo,st.FullName,st.BirthDate,COUNT(m.SubjectCode) AS 'So bai thi'
+FROM Student st
+JOIN MARK m
+ON st.RollNo = m.RollNo
+GROUP BY st.RollNo,st.FullName,st.BirthDate HAVING COUNT(m.SubjectCode) >= 2
+
+SELECT * FROM  V_Student_TwoMark_TwoSubject
+--3
+--	
+--Điểm trung bình môn < 70 ->Trượt
+
+CREATE VIEW V_Student_Not_PassExam_One
 AS
-SELECT 
+SELECT st.RollNo,st.FullName,st.BirthDate,Count(st.RollNo) AS 'So mon thi truot'
+FROM Student st
+JOIN MARK m
+ON st.RollNo = m.RollNo
+WHERE m.Mark <70
+GROUP BY st.RollNo,st.FullName,st.BirthDate
+
+SELECT * FROM V_Student_Not_PassExam_One
+--4
+-- Tạo khug nhìn chứa danh sách các sinh viên đang học ở TimeSLOT S
+CREATE VIEW V_Student_TimeSlot_S
+AS
+SELECT st.RollNo,st.FullName,st.BirthDate, Class.ClassCode,Class.TimeSlot,Class.HeadTeacher
+FROM Student st
+JOIN Class
+ON st.ClassCode = Class.ClassCode
+WHERE Class.TimeSlot = 'S'
+
+SELECT * FROM V_Student_TimeSlot_S
+--5
+--  Tạo khung nhìn số lương sinh viên của từng lớp đang học giáo viên nào 
+	CREATE VIEW V_headTeacher_Student_Class
+	AS
+	SELECT Class.HeadTeacher,Class.ClassCode,student.RollNo
+	FROM Class
+	JOIN Student
+	ON Class.ClassCode = Student.ClassCode
+
+	SELECT * FROM V_headTeacher_Student_Class
+	DROP VIEW V_headTeacher_Student_Class
+
+--Tạo một khung nhìn chứa danh sách các giáo viên có ít nhất 3 học sinh thi trượt ở bất cứ môn nào. 
+
+	CREATE VIEW V_HeadTeacher_Student_NotPassExam_3
+	AS
+	SELECT DISTINCT vhsc.HeadTeacher,Count(Mark.RollNo) AS'So luong sinh vien thi truot'
+	FROM V_headTeacher_Student_Class vhsc
+	JOIN Mark
+	ON vhsc.RollNo = Mark.RollNo
+	WHERE Mark.Mark < 70
+	GROUP BY vhsc.HeadTeacher  HAVING Count(Mark.RollNo) >=3
+
+	SELECT * FROM V_HeadTeacher_Student_NotPassExam_3
+--6
+CREATE VIEW V_headTeacher_StudentName_Class
+	AS
+	SELECT Class.HeadTeacher,Class.ClassCode,student.FullName,Student.RollNo
+	FROM Class
+	JOIN Student
+	ON Class.ClassCode = Student.ClassCode
+
+	SELECT * FROm V_headTeacher_StudentName_Class
+
+--Tạo một khung nhìn chứa danh sách các sinh viên thi trượt môn M01 của từng lớp
+CREATE VIEW V_headTeacher_StudentName_Class_NotPassExam_M01
+	AS
+	SELECT vhscc.HeadTeacher,vhscc.ClassCode,vhscc.FullName,mark.Mark
+	FROM V_headTeacher_StudentName_Class vhscc
+	JOIN Mark
+	ON vhscc.RollNo = Mark.RollNo
+	WHERE Mark.Mark < 70 AND Mark.SubjectCode LIKE 'M01'
+	
+	SELECT * FROM V_headTeacher_StudentName_Class_NotPassExam_M01
